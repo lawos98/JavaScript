@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>
+        Kotlin
+    </title>
+</head>
+
+
+<body>
+
+
+<nav class="navbar box" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item m-4 ">
+            <img src="assets/kotlin.png" alt="Kotlin">
+        </a>
+        <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+
+    <div id="nav-links" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item p-4" href="index.html">
+                <span class="icon m-3">
+                <i class="fas fa-home"></i>
+                </span>
+                Home
+            </a>
+            <a class="navbar-item p-4" href="https://kotlinlang.org/docs/kotlin-reference.pdf">
+                <span class="icon m-3">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+                Documentation
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable p-4">
+                <a class="navbar-link">
+                    Chapters
+                </a>
+
+                <div class="navbar-dropdown p-4 ">
+                    <a class="navbar-item p-2 m-2" href="chapter1.html">
+                        Chapter 1
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter2.html">
+                        Chapter 2
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter3.html">
+                        Chapter 3
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter4.html">
+                        Chapter 4
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter5.html">
+                        Chapter 5
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="section p-5 pb-0">
+    <nav class="breadcrumb has-arrow-separator">
+        <ul class="is-size-6 container">
+            <li><a href="index.html" class="has-text-grey">Home</a></li>
+            <li class="is-active"><a href="#">Chapter 2</a></li>
+        </ul>
+    </nav>
+</div>
+
+<section class="section m-6 columns is-centered">
+    <div class="column is-7">
+        <h1 class="is-size-2-mobile is-size-1-desktop title">Kotlin for data science</h1>
+        <ul><h2 class="is-size-6-mobile is-size-4-desktop subtitle">From building data pipelines to productionizing machine learning models, Kotlin can be a great choice for working with data:
+        </h2>
+            <li>Kotlin is concise, readable, and easy to learn.</li>
+            <li>Static typing and null safety help create reliable, maintainable code that is easy to troubleshoot.
+            </li>
+            <li>Being a JVM language, Kotlin gives you great performance and an ability to leverage an entire ecosystem of tried and true
+                Java libraries.</li>
+        </ul>
+        <ul><h2 class="is-size-6-mobile is-size-4-desktop subtitle">Interactive editors</h2>
+            <li>Notebooks such as Jupyter Notebook and Apache Zeppelin provide convenient tools for data visualization and exploratory
+                research. Kotlin integrates with these tools to help you explore data, share your findings with colleagues, or build up your data
+                science and machine learning skills.</li>
+        </ul>
+        <ul><h2 class="is-size-6-mobile is-size-4-desktop subtitle">Jupyter Kotlin kernel</h2>
+            <li>The Jupyter Notebook is an open-source web application that allows you to create and share documents (aka "notebooks")
+                that can contain code, visualizations, and Markdown text. Kotlin-jupyter is an open source project that brings Kotlin support to
+                Jupyter Notebook.</li>
+        </ul>
+        <div class="image">
+            <img src="assets/diag2.png">
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer mt-6">
+    <div class="content has-text-centered">
+        <p>Copyright 2020 Coffee Ninja</p>
+    </div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>

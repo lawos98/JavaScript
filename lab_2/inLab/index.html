@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://unpkg.com/mocha/mocha.css">
+</head>
+
+<body>
+<div id="mocha">
+</div>
+<div class="countryForm">
+    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+        <div>
+            <label>Country</label><label class="validation-error hide" id="countryValidationError">This field is not a Country.</label><label class="validation-error hide" id="countryValidationError2">This Country already exists.</label>
+            <textarea name="country" id="country"></textarea>
+        </div>
+        <div>
+            <label>Total Cases</label><label class="validation-error hide" id="casesValidationError">This field is not a number.</label><label class="validation-error hide" id="casesValidationError2">Missing value</label>
+            <textarea name="cases" id="cases"></textarea>
+        </div>
+        <div>
+            <label>Total Deaths</label><label class="validation-error hide" id="deathsValidationError">This field is not a number.</label><label class="validation-error hide" id="deathsValidationError2">Missing value</label>
+            <textarea name="deaths" id="deaths"></textarea>
+        </div>
+        <div>
+            <label>Total Tests</label><label class="validation-error hide" id="testsValidationError">This field is not a number.</label><label class="validation-error hide" id="testsValidationError2">Missing value</label>
+            <textarea name="tests" id="tests"></textarea>
+        </div>
+        <div>
+            <label>Total Vaccinations</label><label class="validation-error hide" id="vaccineValidationError">This field is not a number.</label><label class="validation-error hide" id="vaccineValidationError2">Missing value</label>
+            <textarea name="vaccine" id="vaccine"></textarea>
+        </div>
+        <div  class="form-action-buttons">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+<br/>
+<div class = "Covid-table">
+    <table class="list" id="covidList">
+        <thead>
+        <tr>
+            <th>Country</th>
+            <th>Total Cases</th>
+            <th>Total Deaths</th>
+            <th>Total Tests</th>
+            <th>Total Vaccinations</th>
+            <th>Edit/Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+<script src="https://unpkg.com/chai/chai.js"></script>
+<script src="https://unpkg.com/mocha/mocha.js"></script>
+<script class="mocha-init">
+
+    mocha.setup('bdd');
+    mocha.checkLeaks();
+</script>
+<script src="script.js"></script>
+<script class="mocha-exec">
+
+    mocha.run();
+</script>
+</body>
+</html>

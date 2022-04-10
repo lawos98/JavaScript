@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Page title
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js" defer></script>
+</head>
+<body>
+<main>
+    <canvas id="lineChart">
+        Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas" / It looks like your browser does not support the "canvas" element
+    </canvas>
+
+    <canvas id="pieChart">
+        Wygląda na to, że twoja przeglądarka nie obsługuje elementu "canvas" / It looks like your browser does not support the "canvas" element
+    </canvas>
+</main>
+<div class="countryForm">
+    <form onsubmit="event.preventDefault()" autocomplete="off">
+        <div>
+            <label>Country</label><label class="validation-error hide" id="countryValidationError">This field is not a Country.</label>
+            <textarea name="country" id="country"></textarea>
+        </div>
+        <div>
+            <label>Total Cases</label><label class="validation-error hide" id="casesValidationError">This field is not a number.</label><label class="validation-error hide" id="casesValidationError2">Missing value</label>
+            <textarea name="cases" id="cases"></textarea>
+        </div>
+        <div>
+            <label>Total Deaths</label><label class="validation-error hide" id="deathsValidationError">This field is not a number.</label><label class="validation-error hide" id="deathsValidationError2">Missing value</label>
+            <textarea name="deaths" id="deaths"></textarea>
+        </div>
+        <div>
+            <label>Total Tests</label><label class="validation-error hide" id="testsValidationError">This field is not a number.</label><label class="validation-error hide" id="testsValidationError2">Missing value</label>
+            <textarea name="tests" id="tests"></textarea>
+        </div>
+        <div>
+            <label>Total Vaccinations</label><label class="validation-error hide" id="vaccineValidationError">This field is not a number.</label><label class="validation-error hide" id="vaccineValidationError2">Missing value</label>
+            <textarea name="vaccine" id="vaccine"></textarea>
+        </div>
+        <div  class="form-action-buttons">
+            <input type="submit" value="Submit" id="submitButton">
+        </div>
+    </form>
+</div>
+<br/>
+<div class = "Covid-table">
+    <table class="list" id="covidList">
+        <thead>
+        <tr>
+            <th>Country</th>
+            <th>Total Cases</th>
+            <th>Total Deaths</th>
+            <th>Total Tests</th>
+            <th>Total Vaccinations</th>
+            <th>Edit/Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

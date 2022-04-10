@@ -1,0 +1,36 @@
+footer {
+    font-size: 1.2em;
+}
+main,aside{
+    width:max(40vw,350px);
+}
+nav {
+    display: flex;
+    font-size: 1.1em;
+}
+ul {
+    font-size: 1.2em;
+}
+h1,h2{
+    font-size: 2.1em;
+    margin: 0 10px 0 10px;
+}
+blockquote{
+    margin: 10px;
+}
+
+@media (max-width: 800px) , (max-device-width: 800px){
+    html{
+        font-size: 2vw;
+    }
+    aside,nav {
+        float: none;
+    }
+    main{
+        clear:both;
+    }
+    .azure{
+        width: 95vw;
+        margin:  1rem auto 1rem auto;
+    }
+}

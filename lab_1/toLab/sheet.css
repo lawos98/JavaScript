@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+}
+aside  {
+    float:right;
+}
+footer {
+    font-size: 1.2em;
+}
+main {
+    clear: left;
+}
+main,aside{
+    width:max(40vw,350px);
+}
+nav {
+    width:18vw;
+    display: flex;
+    justify-content: flex-end;
+    float: left;
+    font-size: 1.1em;
+}
+ul {
+    font-size: 1.2em;
+}
+h1,h2{
+    font-size: 2.1em;
+    margin: 0 10px 0 10px;
+}
+.azure{
+    background-color: #EFF;
+    border: 1px solid #A8A8A8;
+    box-shadow: black 0 0 5px;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+blockquote{
+    margin: 10px;
+}
+@keyframes changeColor{
+    from{color: red}
+    to{color: blue}
+}
+aside h1{
+    animation: changeColor 0.5s infinite alternate;
+}
+
+@media (max-width: 800px) , (max-device-width: 800px){
+    html{
+        font-size: 2vw;
+    }
+    aside,nav {
+        float: none;
+    }
+    main{
+        clear:both;
+    }
+    .azure{
+        width: 95vw;
+        margin:  1rem auto 1rem auto;
+    }
+}

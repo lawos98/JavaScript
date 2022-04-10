@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>
+        Kotlin
+    </title>
+</head>
+
+
+<body>
+
+
+<nav class="navbar box" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item m-4 ">
+            <img src="assets/kotlin.png" alt="Kotlin">
+        </a>
+        <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+
+    <div id="nav-links" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item p-4" href="index.html">
+                <span class="icon m-3">
+                <i class="fas fa-home"></i>
+                </span>
+                Home
+            </a>
+            <a class="navbar-item p-4" href="https://kotlinlang.org/docs/kotlin-reference.pdf">
+                <span class="icon m-3">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+                Documentation
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable p-4">
+                <a class="navbar-link">
+                    Chapters
+                </a>
+
+                <div class="navbar-dropdown p-4 ">
+                    <a class="navbar-item p-2 m-2" href="chapter1.html">
+                        Chapter 1
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter2.html">
+                        Chapter 2
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter3.html">
+                        Chapter 3
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter4.html">
+                        Chapter 4
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter5.html">
+                        Chapter 5
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="section p-5 pb-0">
+    <nav class="breadcrumb has-arrow-separator">
+        <ul class="is-size-6 container">
+            <li><a href="index.html" class="has-text-grey">Home</a></li>
+            <li class="is-active"><a href="#">Chapter 5</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<section class="section m-6 columns is-centered">
+    <div class="column is-7">
+        <h1 class="is-size-2-mobile is-size-1-desktop title ">Get started with Kotlin Multiplatform</h1>
+        <ul>Support for multiplatform programming is one of Kotlin’s key benefits. It reduces time spent writing and maintaining the same
+            code for different platforms while retaining the flexibility and benefits of native programming.
+            Learn more about Kotlin Multiplatform benefits.
+        </ul>
+        <h2 class="is-size-6-mobile is-size-4-desktop subtitle">Start from scratch</h2>
+        <ul>
+            <li>
+                Create and publish a multiplatform library teaches how to create a multiplatform library available for JVM, JS, and Native
+                and which can be used from any other common code (for example, shared with Android and iOS). It also shows how to
+                write tests which will be executed on all platforms and use an efficient implementation provided by a specific platform.
+            </li>
+            <li>
+                Build a Full Stack Web App with Kotlin Multiplatform teaches the concepts behind building an application that targets
+                Kotlin/JVM and Kotlin/JS by building a client-server application that makes use of shared code, serialization, and other
+                multiplatform paradigms. It also provides a brief introduction to working with Ktor both as a server- and client-side
+                framework.
+            </li>
+            <li>
+                Create your first Kotlin Multiplatform Mobile application shows how to create a mobile application that works on Android
+                and iOS with the help of the Kotlin Multiplatform Mobile plugin for Android Studio. Create, run, and test your first
+                multiplatform mobile application.
+            </li>
+        </ul>
+        <h2 class="is-size-6-mobile is-size-4-desktop subtitle">Dive deep into Kotlin Multiplatform</h2>
+        <ul>
+            <li>
+                Share code on platforms in your Kotlin Multiplatform project.
+            </li>
+            <li>
+                Connect to platform-specific APIs using the Kotlin mechanism of expected and actual declarations.
+            </li>
+            <li>
+                Set up targets manually for your Kotlin Multiplatform projec
+            </li>
+            <li>
+                Configure compilations for production and test purposes in your project.
+            </li>
+            <li>
+                Run tests for JVM, JavaScript, Android, Linux, Windows, macOS, iOS, watchOS, and tvOS simulators.
+            </li>
+            <li>
+                Publish a multiplatform library to the Maven repository
+            </li>
+        </ul>
+        <h2 class="is-size-6-mobile is-size-4-desktop subtitle">Symbolicating crash reports</h2>
+        <ul>To help developers make their apps better, iOS provides a means for analyzing app crashes. For detailed crash analysis, it
+            uses special debug symbol (.dSYM) files that match memory addresses in crash reports with locations in the source code,
+            such as functions or line numbers.
+            By default, the release versions of iOS frameworks produced from the shared Kotlin module have an accompanying .dSYM file.
+            This helps you analyze crashes that happen in the shared module’s code.
+            When an iOS app is rebuilt from bitcode, its dSYM file becomes invalid. For such cases, you can compile the shared module
+            to a static framework that stores the debug information inside itself. For instructions on setting up crash report symbolication
+            in binaries produced from Kotlin modules, see the Kotlin/Native documentation</ul>
+        <div class="image">
+            <img src="assets/diag6.png">
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer mt-6">
+    <div class="content has-text-centered">
+        <p>Copyright 2020 Coffee Ninja</p>
+    </div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>

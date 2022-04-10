@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>
+        Kotlin
+    </title>
+</head>
+
+
+<body>
+
+
+<nav class="navbar box" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item m-4 ">
+            <img src="assets/kotlin.png" alt="Kotlin">
+        </a>
+        <a class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+
+    <div id="nav-links" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item p-4" href="index.html">
+                <span class="icon m-3">
+                <i class="fas fa-home"></i>
+                </span>
+                Home
+            </a>
+            <a class="navbar-item p-4" href="https://kotlinlang.org/docs/kotlin-reference.pdf">
+                <span class="icon m-3">
+                    <i class="fas fa-info-circle"></i>
+                </span>
+                Documentation
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable p-4">
+                <a class="navbar-link">
+                    Chapters
+                </a>
+
+                <div class="navbar-dropdown p-4 ">
+                    <a class="navbar-item p-2 m-2" href="chapter1.html">
+                        Chapter 1
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter2.html">
+                        Chapter 2
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter3.html">
+                        Chapter 3
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter4.html">
+                        Chapter 4
+                    </a>
+                    <a class="navbar-item p-2 m-2" href="chapter5.html">
+                        Chapter 5
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="section p-5 pb-0">
+    <nav class="breadcrumb has-arrow-separator">
+        <ul class="is-size-6 container">
+            <li><a href="index.html" class="has-text-grey">Home</a></li>
+            <li class="is-active"><a href="#">Chapter 1</a></li>
+        </ul>
+    </nav>
+</div>
+
+<section class="section m-6 columns is-centered">
+    <div class="column is-7">
+        <h1 class="is-size-2-mobile is-size-1-desktop title">How Kotlin Multiplatform works</h1>
+        <ul><h2 class="is-size-6-mobile is-size-4-desktop subtitle">Kotlin Multiplatform</h2>
+            <li>Common Kotlin includes the language, core libraries, and basic tools. Code written in common Kotlin works everywhere on all platforms</li>
+            <li>With Kotlin Multiplatform libraries, you can reuse the multiplatform logic in common and platform-specific code. Common
+                code can rely on a set of libraries that cover everyday tasks such as HTTP, serialization, and managing coroutines.
+            </li>
+            <li>To interop with platforms, use platform-specific versions of Kotlin. Platform-specific versions of Kotlin (Kotlin/JVM,
+                Kotlin/JS, Kotlin/Native) include extensions to the Kotlin language, and platform-specific libraries and tools.</li>
+            <li>Through these platforms you can access the platform native code (JVM, JS, and Native) and leverage all native capabilities.
+            </li>
+        </ul>
+        <ul><h2 class="is-size-6-mobile is-size-4-desktop subtitle">Code sharing between platforms</h2>
+            <li>With Kotlin Multiplatform, spend less time on writing and maintaining the same code for different platforms – just share it using
+                the mechanisms Kotlin provides:</li>
+            <li>Share code among all platforms used in your project. Use it for sharing the common business logic that applies to all
+                platforms.
+            </li>
+            <li>Share code among some platforms included in your project but not all. Do this when you can reuse much of the code in
+                similar platforms:</li>
+        </ul>
+        <div class="image">
+            <img src="assets/diag1.png">
+        </div>
+    </div>
+</section>
+
+<footer class="footer mt-6">
+    <div class="content has-text-centered">
+        <p>Copyright 2020 Coffee Ninja</p>
+    </div>
+</footer>
+
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,10 +1,8 @@
 # Kaskadowe arkusze stylów
 
-Wykonaj czynności wstępne dla edytora Visual Studio Code
+Wykonaj [czynności wstępne](https://www.icsr.agh.edu.pl/~polak/jezyki/js/#tematyka) dla edytora Visual Studio Code
 
----
-
-## Sekcja zadań podczas zajęć
+## Sekcja zadań na zajęcia
 
 #### Zad 1. Język CSS
 
@@ -123,8 +121,8 @@ nav li {
 
 ```
 
-4. (1 pkt) Zmodyfikuj zawartość pliku 'sheet.css' (tutoriale: 1, 2) tak, aby otrzymać stronę WWW o wyglądzie takim jak pokazano poniżej
-   - Jak można zauważyć, część z selektorów zawiera własność o takiej samej nazwie i wartości, np. własność ustalająca kolor tła na błękitny
+4. (1 pkt) Zmodyfikuj zawartość pliku 'sheet.css' (tutoriale: [1](http://www.kurshtml.edu.pl/css/), [2](https://www.w3schools.com/css/)) tak, aby otrzymać stronę WWW o wyglądzie takim jak pokazano poniżej
+   - Jak można zauważyć, część z [selektorów](http://webkod.pl/kurs-css/lekcje/dzial-1/idea-stylow-css) zawiera własność o takiej samej nazwie i wartości, np. własność ustalająca kolor tła na błękitny
 
    - Utwórz, w pliku .css, definicję klasy azure, a następnie umieść w niej definicję błękitnego tła, tj. własność z poprzedniego punktu
 
@@ -134,4 +132,160 @@ nav li {
 
    - Przyglądnij się zawartości pliku .css i spróbuj samodzielnie wyodrębnić inne, wspólne własności — zidentyfikuj inne, przydatne klasy, a następnie użyj tych klas w dokumencie HTML
 
-<img align="center" alt="img_1" src="assets/lab_1_1.png"/>
+<img width="100%" alt="img_1" src="assets/lab_1_1.png"/>
+
+5. Korzystając z własności CSS3 [animation](http://webmaster.helion.pl/index.php/css3-animacje) spowoduj, aby kolor napisu "Panel boczny" ulegał płynnej zmianie: od czerwonego do niebieskiego i vice versa
+
+#### 2. Responsywna strona WWW
+
+1. Przeczytaj artykuły:
+   1. [Responsive web design](https://pl.wikipedia.org/wiki/Responsive_web_design) 
+   2. [Zapytania mediów](http://www.kurshtml.edu.pl/css/zapytania_mediow,media.html)
+   3. [Responsywny Web Design](https://damianchodorek.com/responsywny-web-design/)
+2. Zmodyfikuj stronę WWW utworzoną w ramach zadania 1.4 tak, aby była responsywna:
+   - W przypadku komputerów lub tabletów układ ma być taki jak na powyższym rysunku
+   - W przypadku telefonów wszystkie elementy (header, nav, aside, main oraz footer) mają być w układzie jednokolumnowym, a ich szerokość ma być równa szerokości okna przeglądarki WWW — jednakowa szerokość elementów w kolumnie 
+   - Rozmiar czcionek — proporcjonalnie do wielkości okna — należy używać elastycznych jednostek
+
+## Sekcja zadań podczas zajęć
+
+#### 1. Frameworki dla stron responsywnych
+
+1. Skopiuj zawartość każdego z poniższych szablonów do osobnego pliku (HTML) - 
+
+**Szablon "W3.CSS"**
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>
+      Tytuł strony / Page Title
+    </title>
+  </head>
+  <body>
+    <!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
+    <!-- Put here the fixed text content - see task 1 -->
+  </body>
+</html>
+```
+
+**Szablon "Foundation"**
+```html
+<!DOCTYPE html>
+<html class="no-js"
+      lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="x-ua-compatible"
+         content="ie=edge">
+   <link rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
+   <link rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <title>
+      Tytuł strony / Page title
+   </title>
+</head>
+<body>
+<!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
+<!-- Put here the fixed text content - see task 1 -->
+<!--
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
+<script>
+   $(document).foundation();
+</script>
+</body>
+</html>
+```
+
+2. Obejrzyj każdy z dokumentów w przeglądarce WWW
+3. Zmodyfikuj parametry oraz zawartość szablonu W3.CSS ([dokumentacja](https://www.w3schools.com/w3css/)) lub Foundation ([dokumentacja](https://foundation.zurb.com/sites/docs/kitchen-sink.html)) tak, aby otrzymać responsywną stronę WWW — kolorystyka i wygląd zostaną zaprezentowane na początku ćwiczeń (strona odnośnie dowolnie wybranego jezyjka programowania). Elementy składowe to:
+   - Pasek nawigacyjny 
+   - Obszar treści zawierający kontener, a w nim kilka spośród wymienionych, w kolejnym punkcie, elementów 
+   - Animacja stworzona w oparciu o własność 'animation'
+4. Włącz widok trybu responsywnego (Ctrl+Shift+M — Firefox, Ctrl+Shift+I,Ctrl+Shift+M — Google Chrome) i przetestuj czy Twoja strona zachowuje się w sposób responsywny
+
+## Sekcja zadań dla Geeków
+
+#### 1. Frameworki dla stron responsywnych
+
+1. Przeczytaj [artykuł](http://web-ext.u-aizu.ac.jp/labs/is-se/conference_proceedings/icait-16/icait-16-paper-54.pdf), w którym porównano frameworki Bootstrap oraz W3.CSS
+2. Przeczytaj [artykuł](https://blog.templatetoaster.com/bootstrap-vs-foundation/), w którym porównano frameworki Bootstrap oraz Foundation
+3. Korzystając z frameworka Bootstrap (dokumentacja: 1, 2, 3) lub [Bulma](https://bulma.io/), stwórz responsywną stronę WWW (treść tekstowa) składającą się ze strony głównej oraz kilku podstron, poświęconą wybranemu zagadnieniu podanemu po zakończeniu ćwiczeń. Strona powinna zawierać, co najmniej, następujące elementy:
+   - Siatka, której układ, w zależności od rozdzielczości ekranu, ulega zmianie 
+   - Pasek nawigacyjny 
+   - Obrazki 
+   - Karty 
+   - Tabele 
+   - [Ikony Glyphicons](https://fontawesome.com/icons?m=free) 
+   - Stopkę
+
+**Szablon "Bootstrap"**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport"
+         content="width=device-width, initial-scale=1"><!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+         crossorigin="anonymous">
+   <link rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><!-- Page title -->
+
+   <title>
+      Tytuł strony / Page tile
+   </title>
+</head>
+<body>
+<!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
+<!-- Put here the fixed text content - see task 1 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+```
+
+**Szablon "Bulma"**
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport"
+         content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="x-ua-compatible"
+         content="ie=edge">
+   <link rel="stylesheet"
+         href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+   <link rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <title>
+      Tytuł strony / Page title
+   </title>
+</head>
+<body>
+<!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
+<!-- Put here the fixed text content - see task 1 -->
+</body>
+</html>
+```

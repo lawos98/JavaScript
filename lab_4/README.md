@@ -1,291 +1,129 @@
-# Kaskadowe arkusze stylów
-
-Wykonaj [czynności wstępne](https://www.icsr.agh.edu.pl/~polak/jezyki/js/#tematyka) dla edytora Visual Studio Code
+# Środowisko uruchomieniowe 'Node.js'
 
 ## Sekcja zadań na zajęcia
 
-#### Zad 1. Język CSS
+#### [Zad 1. Moduły](toLab/zad_1)
 
-1. Skopiuj poniższą zawartość do osobnego pliku (HTML)
+1. [Skonfiguruj](https://www.icsr.agh.edu.pl/~polak/jezyki/js/#cw4) edytor Visual Studio Code
 
-```html
-<!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet"
-          href="sheet.css"
-          media="screen"
-          type="text/css">
-    <title>
-      Tytuł strony
-    </title>
-  </head>
-  <body>
-    <header>
-      <!-- Page title -->
-      <!-- Background color: #EFF -->
-      <!-- Border color: #A8A8A8 -->
+2. Utwórz, w katalogu 'cw4', skrypt (główny) o nazwie 'index.js' zawierający [klasę](https://kursjs.pl/kurs/obiekty/class.php) 
+Operation. Składniki klasy:
+   - Dwie własności: x oraz y
+   - Dwuargumentowy konstruktor przypisujący ww. własnościom dane początkowe
+   - Metoda `sum()`, która oblicza, a następnie zwraca x+y
 
-      <h1>
-        Tytuł strony
-      </h1>
-    </header>
+3. Umieść w ww. skrypcie fragment kodu wypisujący wynik sumowania liczb dla ustalonych (przez Ciebie) wartości x, y
 
-    <nav>
-      <!--Tutaj menu nawigacyjne / Here the navigation menu -->
-      <!-- left & right margin: 25px -->
+4. Uruchom skrypt za pomocą komendy `node index`, `node .` lub naciśnij `Ctrl+Alt+R`
 
-      <ul>
-        <li>
-          <a href="">Element 1</a>
-        </li>
+5. Sprawdź, czy jest możliwe utworzenie obiektu przed definicją klasy
 
-        <li>
-          <a href="">Element 2</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Tutaj treść panelu bocznego / Here the content of the side panel-->
+6. Przenieś definicję klasy do osobnego pliku o nazwie 'module.js' — w skrypcie głównym ma zostać tylko kod wypisujący wynik sumowania liczb
 
-    <aside>
-      <h1>
-        Panel boczny
-      </h1>
+7. W pierwszej linii pliku 'index.js' umieść `const module = require('./module');`, a następnie [spowoduj](https://nodejs.org/dist/latest/docs/api/modules.html#modules_modules)
+, aby skrypt nadal działał, tzn. po wykonaniu komendy `node index` wypisywał wynik operacji x+y
 
-      <h2>
-        Ciekawe odsyłacze
-      </h2>
+8. Stworzony (powyżej) moduł to moduł typu "CommonJS". [Skonwertuj go](https://blog.logrocket.com/es-modules-in-node-js-12-from-experimental-to-release/#modulesinnodejscurrentstate)
+(ręcznie) do modułu typu "[ES6](http://kursjs.pl/kurs/es6/moduly.php)", a następnie użyj tego modułu w skrypcie głównym — być może będzie 
+to wymagać zmiany rozszerzenia nazwy pliku
 
-      <ul>
-        <li>
-          <a href="">Odsyłacz 1</a>
-        </li>
+9. Przeczytaj [fragment artykułu](https://kursjs.pl/kurs/es6/node.php#npx) poświęcony poleceniu `npx`
 
-        <li>
-          <a href="">Odsyłacz 2</a>
-        </li>
+10. Utwórz podkatalog 'cw4/test'
 
-        <li>
-          <a href="">Odsyłacz 3</a>
-        </li>
-      </ul>
-    </aside>
+11. Utwórz w nim plik o nazwie 'test1.js' i następującej zawartości:
 
-    <main>
-      <!--Tutaj treść strony / Here the content of the page -->
+```js
+/*
+  Mocha allows you to use any assertion library you wish. In this example, we are using the built-in module called 'Assert'.
+  If you prefer the 'Chai' library (https://www.chaijs.com/) then you have to install it yourself: 'npm install chai --save-dev',
+  and then you need to uncomment the lines below.
+*/
 
-      <h1>
-        Treść strony
-      </h1>
+//----------------------------------------
+// Mocha tests with CommonJS style imports
+//----------------------------------------
 
-      <blockquote>
-        Natenczas Wojski chwycił na taśmie przypięty Swój róg bawoli, długi, cętkowany, kręty Jak wąż boa, oburącz do ust go przycisnął, Wzdął policzki jak banię, w oczach krwią zabłysnął, Zasunął wpół powieki, wciągnął w głąb pół brzucha I do płuc wysłał z niego cały zapas ducha, I zagrał: róg jak wicher, wirowatym dechem Niesie w puszczę muzykę i podwaja echem. Umilkli strzelcy, stali szczwacze zadziwieni Mocą, czystością, dziwną harmoniją pieni. Starzec cały kunszt, którym niegdyś w lasach słynął, Jeszcze raz przed uszami myśliwców rozwinął; Napełnił wnet, ożywił knieje i dąbrowy, Jakby psiarnię w nie wpuścił i rozpoczął łowy. Bo w graniu była łowów historyja krótka: Zrazu odzew dźwięczący, rześki: to pobudka; Potem jęki po jękach skomlą: to psów granie; A gdzieniegdzie ton twardszy jak grzmot: to strzelanie.
-      </blockquote>
-    </main>
+// var expect = require('chai').expect;
+var assert = require('assert');
+var module = require('../module');
 
-    <footer>
-      <!-- Tutaj treść stopki / Here the content of the footer -->
-      <a href="mailto:your.email.address">Imię Nazwisko</a>
-    </footer>
-  </body>
-</html>
+describe('The sum() method', function () {
+  it('Returns 4 for 2+2', function () {
+    var op = new module.Operation(2, 2);
+    assert.strictEqual(op.sum(), 4)
+    // expect(op.sum()).to.equal(4);
+  });
+  it('Returns 0 for -2+2', function () {
+    var op = new module.Operation(-2, 2);
+    assert.strictEqual(op.sum(), 0)
+    // expect(op.sum()).to.equal(0);
+  });
+});
+
+//-----------------------------------
+// Mocha tests with ES6 style imports
+//-----------------------------------
+
+/*
+- You must install the 'esm' module (https://www.npmjs.com/package/esm) — npm install esm --save-dev
+- You must run tests as follows: npx mocha --require esm
+Source: https://stackoverflow.com/questions/57004631/mocha-tests-with-es6-style-imports
+
+import { Operation } from "../module";
+import assert from 'assert';
+
+describe('The sum() method', function () {
+  it('Returns 4 for 2+2', function () {
+    var op = new Operation(2, 2);
+    assert.strictEqual(op.sum(), 4)
+  });
+  it('Returns 0 for -2+2', function () {
+    var op = new Operation(-2, 2);
+    assert.strictEqual(op.sum(), 0)
+  });
+});
+*/
 ```
 
-2. Obejrzyj dokument w przeglądarce WWW
+12. Zainstaluj wtyczkę ["ES6 Mocha Snippets"](https://marketplace.visualstudio.com/items?itemName=spoonscen.es6-mocha-snippets) dla Visual Studio 
+Code — wykonaj komendę: `code --install-extension spoonscen.es6-mocha-snippets`
 
-3. Utwórz plik 'sheet.css' o następującej zawartości
+13. Obejrzyj jej [demo](https://marketplace.visualstudio.com/items?itemName=spoonscen.es6-mocha-snippets), a następnie wypróbuj niektóre z oferowanych, przez nią, snippetów
 
-```css
-aside  {
-  /* Specyfikacja wyglądu */
-}
-footer {
-  /* Specyfikacja wyglądu */
-}      
-header {
-  /* Specyfikacja wyglądu */
-}     
-main { 
-  /* Specyfikacja wyglądu */
-}
-nav {
-  /* Specyfikacja wyglądu */
-}
-nav ul {
-  /* Specyfikacja wyglądu */
-}
-nav li {
-  /* Specyfikacja wyglądu */
-}
+14. Z poziomu katalogu 'cw4', uruchom test za pomocą komendy `npx mocha`
+   - Powyższa komenda spowoduje zainstalowanie (w podkatalogu wymienionym w ["How can I clear the central cache for `npx`?"](https://stackoverflow.com/questions/63510325/how-can-i-clear-the-central-cache-for-npx)),
+a następnie uruchomienie programu mocha
+   - Jeżeli komenda 'npx' nie jest dostępna, to:
+      - Zainstaluj (samodzielnie) framework [Mocha](https://mochajs.org/): `npm install mocha --save-dev` — w tym przypadku program mocha zostanie zainstalowany w podkatalogu './node_modules/mocha/bin'
+      - Uruchom test za pomocą komendy `node ./node_modules/mocha/bin/mocha`
 
-```
+15. Zainstaluj wtyczkę ["Mocha sidebar"](https://marketplace.visualstudio.com/items?itemName=maty.vscode-mocha-sidebar) dla Visual Studio Code — 
+wykonaj komendę: `code --install-extension maty.vscode-mocha-sidebar`
 
-4. (1 pkt) Zmodyfikuj zawartość pliku 'sheet.css' (tutoriale: [1](http://www.kurshtml.edu.pl/css/), [2](https://www.w3schools.com/css/)) tak, aby otrzymać stronę WWW o wyglądzie takim jak pokazano poniżej
-   - Jak można zauważyć, część z [selektorów](http://webkod.pl/kurs-css/lekcje/dzial-1/idea-stylow-css) zawiera własność o takiej samej nazwie i wartości, np. własność ustalająca kolor tła na błękitny
+<div align="center"><img alt="lab_4_1" src="assets/lab_4_1.png"/></div>
 
-   - Utwórz, w pliku .css, definicję klasy azure, a następnie umieść w niej definicję błękitnego tła, tj. własność z poprzedniego punktu
+16.Obejrzyj jej [demo](https://marketplace.visualstudio.com/items?itemName=maty.vscode-mocha-sidebar), a następnie uruchom, za jej 
+pomocą, test z poziomu Visual Studio Code
 
-   - Usuń ze wszystkich selektorów ww. własność — definicja błękitnego tła ma występować, tylko i wyłącznie, w obrębie klasy azure
+17.Zmodyfikuj skrypt 'index.js' — wartości parametrów x oraz y mają być przekazywane z poziomu linii komend — `node index 2 7`
 
-   - W dokumencie HTML, przypisz wszystkim elementom, które mają mieć błękitne tło, atrybut class w następującej postaci: class='azure'
+18. Wzbogać kod źródłowy modułu (klasa Operation, metoda `sum()` oraz konstruktor) o 
+[komentarze dokumentacyjne](http://usejsdoc.org/about-getting-started.html) programu [JSDoc](https://www.npmjs.com/package/jsdoc)
 
-   - Przyglądnij się zawartości pliku .css i spróbuj samodzielnie wyodrębnić inne, wspólne własności — zidentyfikuj inne, przydatne klasy, a następnie użyj tych klas w dokumencie HTML
+19. Wygeneruj dokumentację korzystająć z komendy `npx jsdoc module.js`
 
-<img width="100%" alt="img_1" src="assets/lab_1_1.png"/>
+#### [Zad 2. Moduł 'fs'](toLab/zad_2)
 
-5. Korzystając z własności CSS3 [animation](http://webmaster.helion.pl/index.php/css3-animacje) spowoduj, aby kolor napisu "Panel boczny" ulegał płynnej zmianie: od czerwonego do niebieskiego i vice versa
+Napisz:
+- Skrypt, który korzystając z modułu [fs](https://nodejs.org/api/fs.html), dla podanego w linii komend napisu, 
+wyświetla informację czy reprezentuje on nazwę (istniejącego) pliku, czy katalogu. Jeżeli jest to plik, to korzystając 
+z funkcji w wersji **synchronicznej** (`fs.*Sync(...)`), ma on wypisać jego zawartość
+- Utwórz plik 'test/test2.js' zawierający test weryfikujący poprawność działania tej implementacji
 
-#### 2. Responsywna strona WWW
+#### [Zad 3. Moduł 'http'](toLab/zad_3)
 
-1. Przeczytaj artykuły:
-   1. [Responsive web design](https://pl.wikipedia.org/wiki/Responsive_web_design) 
-   2. [Zapytania mediów](http://www.kurshtml.edu.pl/css/zapytania_mediow,media.html)
-   3. [Responsywny Web Design](https://damianchodorek.com/responsywny-web-design/)
-2. Zmodyfikuj stronę WWW utworzoną w ramach zadania 1.4 tak, aby była responsywna:
-   - W przypadku komputerów lub tabletów układ ma być taki jak na powyższym rysunku
-   - W przypadku telefonów wszystkie elementy (header, nav, aside, main oraz footer) mają być w układzie jednokolumnowym, a ich szerokość ma być równa szerokości okna przeglądarki WWW — jednakowa szerokość elementów w kolumnie 
-   - Rozmiar czcionek — proporcjonalnie do wielkości okna — należy używać elastycznych jednostek
+## [Sekcja zadań podczas zajęć](inLab)
 
-## Sekcja zadań podczas zajęć
+## [Sekcja zadań dla Geeków](geek)
 
-#### 1. Frameworki dla stron responsywnych
-
-1. Skopiuj zawartość każdego z poniższych szablonów do osobnego pliku (HTML) - 
-
-**Szablon "W3.CSS"**
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"
-          href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>
-      Tytuł strony / Page Title
-    </title>
-  </head>
-  <body>
-    <!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
-    <!-- Put here the fixed text content - see task 1 -->
-  </body>
-</html>
-```
-
-**Szablon "Foundation"**
-```html
-<!DOCTYPE html>
-<html class="no-js"
-      lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport"
-         content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="x-ua-compatible"
-         content="ie=edge">
-   <link rel="stylesheet"
-         href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css">
-   <link rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <title>
-      Tytuł strony / Page title
-   </title>
-</head>
-<body>
-<!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
-<!-- Put here the fixed text content - see task 1 -->
-<!--
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
--->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"></script>
-<script>
-   $(document).foundation();
-</script>
-</body>
-</html>
-```
-
-2. Obejrzyj każdy z dokumentów w przeglądarce WWW
-3. Zmodyfikuj parametry oraz zawartość szablonu W3.CSS ([dokumentacja](https://www.w3schools.com/w3css/)) lub Foundation ([dokumentacja](https://foundation.zurb.com/sites/docs/kitchen-sink.html)) tak, aby otrzymać responsywną stronę WWW — kolorystyka i wygląd zostaną zaprezentowane na początku ćwiczeń. Elementy składowe to:
-   - Pasek nawigacyjny 
-   - Obszar treści zawierający kontener, a w nim kilka spośród wymienionych, w kolejnym punkcie, elementów 
-   - Animacja stworzona w oparciu o własność 'animation'
-4. Włącz widok trybu responsywnego (Ctrl+Shift+M — Firefox, Ctrl+Shift+I,Ctrl+Shift+M — Google Chrome) i przetestuj czy Twoja strona zachowuje się w sposób responsywny
-
-## Sekcja zadań dla Geeków
-
-#### 1. Frameworki dla stron responsywnych
-
-1. Przeczytaj [artykuł](http://web-ext.u-aizu.ac.jp/labs/is-se/conference_proceedings/icait-16/icait-16-paper-54.pdf), w którym porównano frameworki Bootstrap oraz W3.CSS
-2. Przeczytaj [artykuł](https://blog.templatetoaster.com/bootstrap-vs-foundation/), w którym porównano frameworki Bootstrap oraz Foundation
-3. Korzystając z frameworka Bootstrap (dokumentacja: 1, 2, 3) lub [Bulma](https://bulma.io/), stwórz responsywną stronę WWW (treść tekstowa) składającą się ze strony głównej oraz kilku podstron, poświęconą wybranemu zagadnieniu podanemu po zakończeniu ćwiczeń (strona odnośnie dowolnie wybranego jezyjka programowania). Strona powinna zawierać, co najmniej, następujące elementy:
-   - Siatka, której układ, w zależności od rozdzielczości ekranu, ulega zmianie 
-   - Pasek nawigacyjny 
-   - Obrazki 
-   - Karty 
-   - Tabele 
-   - [Ikony Glyphicons](https://fontawesome.com/icons?m=free) 
-   - Stopkę
-
-**Szablon "Bootstrap"**
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <!-- Required meta tags -->
-   <meta charset="utf-8">
-   <meta name="viewport"
-         content="width=device-width, initial-scale=1"><!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-         rel="stylesheet"
-         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-         crossorigin="anonymous">
-   <link rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><!-- Page title -->
-
-   <title>
-      Tytuł strony / Page tile
-   </title>
-</head>
-<body>
-<!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
-<!-- Put here the fixed text content - see task 1 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-</body>
-</html>
-```
-
-**Szablon "Bulma"**
-```html
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport"
-         content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="x-ua-compatible"
-         content="ie=edge">
-   <link rel="stylesheet"
-         href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-   <link rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-   <title>
-      Tytuł strony / Page title
-   </title>
-</head>
-<body>
-<!-- Umieść tutaj stałą treść tekstu - patrz zadanie 1 -->
-<!-- Put here the fixed text content - see task 1 -->
-</body>
-</html>
-```

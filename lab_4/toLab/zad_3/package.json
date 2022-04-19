@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "mocha": "^9.2.2",
+    "should": "^13.2.3",
+    "supertest": "^6.2.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "mocha": "mocha"
+  }
+}

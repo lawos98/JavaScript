@@ -1,0 +1,13 @@
+{
+  "name": "zad2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mocha": "npx mocha ",
+    "test": "node index.js package.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

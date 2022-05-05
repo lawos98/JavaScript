@@ -1,5 +1,6 @@
 var score = 0;
 var scoreView = document.getElementById("score");
+var body = document.body;
 var randomWords=["test","random","loremIpsum","randomText"]
 stopped = false;
 
@@ -107,11 +108,11 @@ function startGame(){
         if (!stopped) {
             gameRemove()
         }
-    }, 500);
+    }, 1000);
     
     window.setTimeout(() => {
         stopped = true;
         message="End of game your score is "+score;
-        prompt(message);
+        body.innerHTML="Your score is "+score;
     }, 30000);
 }

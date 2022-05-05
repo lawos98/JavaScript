@@ -243,6 +243,14 @@ Proszę korzystać z [API używającego funkcji zwrotnych](https://nodejs.org/ap
 
 - Zmodyfikuj treść pliku 'test/test3.js' — test ma weryfikować poprawność działania bieżącej implementacji
 
+### Dla Ambitnych
+1. Korzystając z programu [Apache Bench](https://www.tutorialspoint.com/apache_bench/) zbadaj wydajność dwóch aplikacji internetowych. Pierwsza z nich czyta zawartość pliku tekstowego, korzystając z funkcji modułu 'fs' w wersji synchronicznej. Druga, używa wersji asynchronicznej tych funkcji.
+- Pobierz kod źródłowy ww. aplikacji z repozytorium
+- Uruchom wersję synchroniczną — wykonaj komendę `node sync.js`
+- Za pomocą polecenia `ab -n 1000 -c 1000 -vhr http://localhost:8081/` zbadaj szybkość działania wersji synchronicznej
+- Uruchom wersję asynchroniczną — wykonaj komendę `node async.js`
+- Za pomocą polecenia `ab -n 1000 -c 1000 -vhr http://localhost:8080/` zbadaj szybkość działania wersji asynchronicznej
+2. Przeczytaj [artykuł](https://sekurak.pl/wprowadzenie-do-narzedzia-zed-attack-proxy-zap/) poświęcony narzędziu [ZAP](https://github.com/zaproxy/zaproxy/)
 ## [Sekcja zadań dla Geeków](geek)
 
 Napisz skrypt (1 pkt.) oraz towarzyszący mu test Mocha (0.5 pkt.), który na podstawie danych zawartych w polu formularza, przetwarza zawartość pliku lub katalogu

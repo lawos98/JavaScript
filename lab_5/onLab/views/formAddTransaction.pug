@@ -1,0 +1,14 @@
+extends index.pug 
+
+block formAddTransaction
+    form(action="/transaction" method="post" class="m-5")
+        label(for="user") User:
+        input(type="text" name="user")
+        br
+        label(for="item") item:
+        input(type="text" name="item")
+        br
+        label(for="count") Count:
+        input(type="number" name="count")
+        br
+        input(type="submit", value="Add")

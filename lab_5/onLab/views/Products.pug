@@ -1,0 +1,14 @@
+extends index.pug 
+
+block products
+    table(style='width:100%', border='1')
+        tr
+            th Name
+            th Stock
+            th Price
+
+        each item in records
+            tr
+                td #{item.name}
+                td #{item.stock}
+                td #{item.price}

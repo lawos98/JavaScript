@@ -1,0 +1,15 @@
+extends index.pug 
+
+block addTransaction
+    h1 #{records.text}
+    table(style='width:100%', border='1')
+        tr
+            th Name
+            th Stock
+            th Price
+            th Users
+        tr
+            td #{records.name}
+            td #{records.stock}
+            td #{records.price}
+            td #{records.users}

@@ -1,0 +1,14 @@
+extends index.pug 
+
+block formAddProduct
+    form(action="/addTransaction" method="post" class="m-5")
+        label(for="name") Name:
+        input(type="text" name="name")
+        br
+        label(for="price") Price:
+        input(type="number" name="price")
+        br
+        label(for="stock") Stock:
+        input(type="number" name="stock")
+        br
+        input(type="submit", value="Add")
